@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Generator</title>
+    <style>
+        footer{
+          background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your One-Time Password:</h1>
+    <p id="otpDisplay"></p>
+
+    <script>
+        function generateOTP() {
+            let digits = '0123456789';
+            let OTP = '';
+
+            for (let i = 0; i < 6; i++) {
+                OTP += digits[Math.floor(Math.random() * 10)];
+            }
+
+            return OTP;
+        }
+
+        window.onload = function() {
+            let generatedOTP = generateOTP();
+            document.getElementById('otpDisplay').innerText = generatedOTP;
+        };
+    </script>
+    <footer >copyright &copy 2023, Team: Byte Autocratz</footer>
+</body>
+</html>
